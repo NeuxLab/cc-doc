@@ -1,0 +1,24 @@
+<div class="sidebar blog">
+  <div class="sidebar-inner">
+    <ul class="main-menu">
+      <%- partial('partials/main_menu', { context: 'nav' }) %>
+    </ul>
+    <div class="list">
+      <h2>
+        帮助中心
+      </h2>
+      <ul style="padding: 0;">
+      <% site.posts.sort('date', 1).limit(10).each(function (post) { %>
+        <li>
+          <a href="<%- url_for(post.path) %>" class="sidebar-link<%- page.title === post.title ? ' current' : '' %>"><%- post.title %></a>
+        </li>
+      <% }) %>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="content with-sidebar blog post">
+  <%- partial('partials/ad') %>
+  <h1><%- page.title %></h1>
+  <%- page.content %>
+</div>

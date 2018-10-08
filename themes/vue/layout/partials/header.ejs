@@ -1,0 +1,9 @@
+<div id="header">
+  <a id="logo" href="/">
+    <img src="<%- url_for("/images/logo.svg") %>" alt="cc logo">
+    <span>CC助手</span>
+  </a>
+  <ul id="nav">
+    <%- partial('partials/main_menu', { context: 'nav' }) %>
+  </ul>
+</div>
